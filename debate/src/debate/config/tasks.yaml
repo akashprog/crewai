@@ -1,0 +1,26 @@
+propose:
+  description: >
+    You are proposing the motion: {motion}.
+    Present a clear and compelling argument in favour of the motion. The motion is {motion}.
+  expected_output: >
+    A list of 5 bullet points of the relavent arguments in favour of the motion.
+  agent: proposer
+  output_file: output/propose.md
+
+oppose:
+  description: >
+    You are opposing the motion: {motion}.
+    Present a clear and compelling argument against the motion. The motion is {motion}.
+  expected_output: >
+    A list of 5 bullet points of the relavent arguments against the motion.
+  agent: opposer
+  output_file: output/oppose.md
+
+decide:
+  description: >
+    You are reviewing the arguments presented for and against the motion: {motion}.
+    Review the arguments and decide the winner based purely on the arguments presented.
+  expected_output: >
+    The winner of the debate based purely on the arguments presented and why.
+  agent: judge
+  output_file: output/decide.md
