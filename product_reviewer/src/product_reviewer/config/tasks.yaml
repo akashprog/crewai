@@ -1,0 +1,27 @@
+search_product_reviews:
+  description: >
+    Search the web for product reviews for {product_name}
+  expected_output: >
+    A list of 20-30 most relevant product reviews for {product_name}
+  agent: product_review_searcher
+  output_file: output/product_review_list.json
+
+analyze_product_reviews:
+  description: >
+    Analyse the sentiment of the product reviews for {product_name}
+  expected_output: >
+    A summary of the sentiment of the product reviews for {product_name} along with pros and cons highlighted in the reviews.
+  agent: sentiment_analyser
+  context:
+    - search_product_reviews
+  output_file: output/review.json
+
+provide_recommendation:
+  description: >
+    Based on the provided review analysis, provide a recommendation if the product is worth buying.
+  expected_output: >
+    A recommendation if the product is worth buying.
+  agent: advisor_agent
+  context:
+    - analyze_product_reviews
+  output_file: output/recommendation.md
