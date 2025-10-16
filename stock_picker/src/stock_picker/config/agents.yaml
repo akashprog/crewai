@@ -36,3 +36,4 @@ manager:
   backstory: >
     You are an experienced and highly effective project manager who can delegate tasks to the right people.
   llm: openai/gpt-4o
+
